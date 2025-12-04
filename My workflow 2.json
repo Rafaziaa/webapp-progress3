@@ -1,0 +1,69 @@
+{
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "260cb382-8b30-441c-b57f-9b972e79cefe",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "b54db885-91d0-40b7-97b4-8a48149113cd",
+      "name": "Webhook",
+      "webhookId": "260cb382-8b30-441c-b57f-9b972e79cefe"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "responses": {
+          "values": [
+            {}
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "5abfe61b-3f81-49a1-a165-4b94a38aa9e0",
+      "name": "Message a model"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "da61d914-33f0-4efc-afa2-f22b7ef837c9",
+  "meta": {
+    "instanceId": "70a61f0cfd504a32e171f4abaeb3130986f38378bf639d4a13e5ff182722fa40"
+  },
+  "id": "ONV9Lh6lqlaRgR7N",
+  "tags": []
+}

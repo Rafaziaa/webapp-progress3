@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Progress 3 WebApp</title>
+  </head>
+  <body>
+    <h2>Progress 3 → WebApp to n8n</h2>
+
+    <form id="form">
+      <input type="text" id="question" placeholder="Tanya apa saja..." required />
+      <button type="submit">Kirim</button>
+    </form>
+
+    <h3>Jawaban:</h3>
+    <p id="result"></p>
+
+    <script>
+      document.getElementById("form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const question = document.getElementById("question").value;
+
+        const response = await fetch("/ask", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question }),
+        });
+
+        const data = await response.json();
+        document.getElementById("result").innerText = data.answer;
+      });
+    </script>
+  </body>
+</html>
